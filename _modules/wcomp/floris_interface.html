@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+
+
+<html lang="python" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wcomp.floris_interface &#8212; wcomp</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=30a733bc"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7LZJG24QM5"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-7LZJG24QM5');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-7LZJG24QM5');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/wcomp/floris_interface';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">wcomp</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Wakes Compared (wcomp)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture and Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api_docs.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.base_interface.html">wcomp.base_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.floris_interface.html">wcomp.floris_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.foxes_interface.html">wcomp.foxes_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.pywake_interface.html">wcomp.pywake_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.output_struct.html">wcomp.output_struct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.plotting.html">wcomp.plotting</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp/issues/new?title=Issue%20on%20page%20%2F_modules/wcomp/floris_interface.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for wcomp.floris_interface</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">floris.tools</span> <span class="kn">import</span> <span class="n">FlorisInterface</span>
+<span class="kn">from</span> <span class="nn">windIO.utils.yml_utils</span> <span class="kn">import</span> <span class="n">load_yaml</span>
+
+<span class="kn">from</span> <span class="nn">.base_interface</span> <span class="kn">import</span> <span class="n">WCompBase</span>
+<span class="kn">from</span> <span class="nn">.output_struct</span> <span class="kn">import</span> <span class="n">WakePlane</span><span class="p">,</span> <span class="n">WakeProfile</span>
+<span class="kn">from</span> <span class="nn">.plotting</span> <span class="kn">import</span> <span class="n">plot_plane</span><span class="p">,</span> <span class="n">plot_profile</span>
+
+<span class="c1"># This dictionary maps generic model names in the windIO input file</span>
+<span class="c1"># to the tool&#39;s specific name. It also maps parameter names from the</span>
+<span class="c1"># referenced papers to the parameters in the implementation.</span>
+<span class="c1"># &quot;windIO_model_name&quot;: {</span>
+<span class="c1">#   &quot;model_ref&quot;: the current software&#39;s reference for this wake model,</span>
+<span class="c1">#   &quot;parameters&quot;: {</span>
+<span class="c1">#       &quot;model parameter&quot;: windIO parameter</span>
+<span class="c1">#   }</span>
+<span class="c1"># }</span>
+<span class="n">WAKE_MODEL_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="c1"># Velocity models</span>
+    <span class="s2">&quot;jensen&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;jensen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;we&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;bastankhah2014&quot;</span><span class="p">:</span> <span class="p">{</span>     <span class="c1"># NOT IMPLEMENTED</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;bastankhah2016&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;gauss&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ka&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;kb&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;turbopark&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;turbopark&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="c1"># Deflection model</span>
+    <span class="kc">None</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;jimenez&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;jimenez&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;ad&quot;</span><span class="p">:</span> <span class="s2">&quot;ad&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bd&quot;</span><span class="p">:</span> <span class="s2">&quot;bd&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;kd&quot;</span><span class="p">:</span> <span class="s2">&quot;kd&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;bastankhah2016_deflection&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;gauss&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;ad&quot;</span><span class="p">:</span> <span class="s2">&quot;ad&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bd&quot;</span><span class="p">:</span> <span class="s2">&quot;bd&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ka&quot;</span><span class="p">:</span> <span class="s2">&quot;ka&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;kb&quot;</span><span class="p">:</span> <span class="s2">&quot;kb&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># ASSUMPTION: FLORIS has a vertical and horizontal wake expansion rate for Bastankhah 2016, but FOXES uses the same for both.</span>
+<span class="c1"># This is also mentioned in the paper in section 7 Model Predictions.</span>
+<span class="c1"># For simplicity in connecting the models, I&#39;m setting FLORIS to use the same for both.</span>
+
+<span class="n">basic_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jensen-Jimenez&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Three turbines using Jensen / Jimenez models&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;floris_version&#39;</span><span class="p">:</span> <span class="s1">&#39;v3.4.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;logging&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;console&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;enable&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;WARNING&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;enable&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;WARNING&#39;</span><span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;turbine_grid&#39;</span><span class="p">,</span> <span class="s1">&#39;turbine_grid_points&#39;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;farm&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;layout_x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">630.0</span><span class="p">,</span> <span class="mf">1260.0</span><span class="p">],</span>
+        <span class="s1">&#39;layout_y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+        <span class="s1">&#39;turbine_type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;nrel_5MW&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;flow_field&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;air_density&#39;</span><span class="p">:</span> <span class="mf">1.225</span><span class="p">,</span>
+        <span class="s1">&#39;reference_wind_height&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;turbulence_intensity&#39;</span><span class="p">:</span> <span class="mf">0.06</span><span class="p">,</span>
+        <span class="s1">&#39;wind_directions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">270.0</span><span class="p">],</span>
+        <span class="s1">&#39;wind_shear&#39;</span><span class="p">:</span> <span class="mf">0.12</span><span class="p">,</span>
+        <span class="s1">&#39;wind_speeds&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">],</span>
+        <span class="s1">&#39;wind_veer&#39;</span><span class="p">:</span> <span class="mf">0.0</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;wake&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;model_strings&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;combination_model&#39;</span><span class="p">:</span> <span class="s1">&#39;sosfs&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;deflection_model&#39;</span><span class="p">:</span> <span class="s1">&#39;jimenez&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;turbulence_model&#39;</span><span class="p">:</span> <span class="s1">&#39;crespo_hernandez&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;velocity_model&#39;</span><span class="p">:</span> <span class="s1">&#39;jensen&#39;</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;enable_secondary_steering&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;enable_yaw_added_recovery&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;enable_transverse_velocities&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;wake_deflection_parameters&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;jimenez&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;ad&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s1">&#39;bd&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="s1">&#39;kd&#39;</span><span class="p">:</span> <span class="mf">0.05</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;wake_velocity_parameters&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;jensen&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;we&#39;</span><span class="p">:</span> <span class="mf">0.05</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;wake_turbulence_parameters&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;crespo_hernandez&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;initial&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                <span class="s1">&#39;constant&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+                <span class="s1">&#39;ai&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+                <span class="s1">&#39;downstream&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.32</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<div class="viewcode-block" id="WCompFloris">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris">[docs]</a>
+<span class="k">class</span> <span class="nc">WCompFloris</span><span class="p">(</span><span class="n">WCompBase</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    `WCompFloris` implements the wcomp interface to the FLORIS software.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">LINE_PLOT_COLOR</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+    <span class="n">LINE_PLOT_MARKER</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">LINE_PLOT_LINESTYLE</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span>
+    <span class="n">LEGEND</span> <span class="o">=</span> <span class="s2">&quot;Floris&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">):</span>
+
+        <span class="n">input_dictionary</span> <span class="o">=</span> <span class="n">load_yaml</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">floris_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_floris_dict</span><span class="p">(</span><span class="n">input_dictionary</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fi</span> <span class="o">=</span> <span class="n">FlorisInterface</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">floris_dict</span><span class="p">)</span>
+
+        <span class="n">n_wind_directions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">floris</span><span class="o">.</span><span class="n">flow_field</span><span class="o">.</span><span class="n">n_wind_directions</span>
+        <span class="n">n_wind_speeds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">floris</span><span class="o">.</span><span class="n">flow_field</span><span class="o">.</span><span class="n">n_wind_speeds</span>
+        <span class="n">n_turbines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">floris</span><span class="o">.</span><span class="n">farm</span><span class="o">.</span><span class="n">n_turbines</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_wind_directions</span><span class="p">,</span> <span class="n">n_wind_speeds</span><span class="p">,</span> <span class="n">n_turbines</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">input_dictionary</span><span class="p">[</span><span class="s2">&quot;attributes&quot;</span><span class="p">][</span><span class="s2">&quot;analyses&quot;</span><span class="p">][</span><span class="s2">&quot;yaw_angles&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_wake</span><span class="p">(</span><span class="n">yaw_angles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">rotor_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">floris</span><span class="o">.</span><span class="n">farm</span><span class="o">.</span><span class="n">rotor_diameters</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hub_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">floris</span><span class="o">.</span><span class="n">farm</span><span class="o">.</span><span class="n">hub_heights</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1">### Create the model from windIO</span>
+
+    <span class="k">def</span> <span class="nf">_create_floris_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wes</span><span class="p">):</span>
+        <span class="c1"># &quot;wes&quot; is the wind energy system windIO file</span>
+
+        <span class="n">new_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">basic_dict</span><span class="p">)</span>
+        <span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;floris_version&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;v3.4.0&quot;</span>
+
+        <span class="n">wes_wind_resource</span> <span class="o">=</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;site&quot;</span><span class="p">][</span><span class="s2">&quot;energy_resource&quot;</span><span class="p">][</span><span class="s2">&quot;wind_resource&quot;</span><span class="p">]</span>
+        <span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;flow_field&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;air_density&#39;</span><span class="p">:</span> <span class="mf">1.225</span><span class="p">,</span>
+            <span class="s1">&#39;reference_wind_height&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s1">&#39;turbulence_intensity&#39;</span><span class="p">:</span> <span class="n">wes_wind_resource</span><span class="p">[</span><span class="s2">&quot;turbulence_intensity&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;wind_directions&#39;</span><span class="p">:</span> <span class="n">wes_wind_resource</span><span class="p">[</span><span class="s2">&quot;wind_direction&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;wind_shear&#39;</span><span class="p">:</span> <span class="mf">0.12</span><span class="p">,</span>
+            <span class="s1">&#39;wind_speeds&#39;</span><span class="p">:</span> <span class="n">wes_wind_resource</span><span class="p">[</span><span class="s2">&quot;wind_speed&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;wind_veer&#39;</span><span class="p">:</span> <span class="mf">0.0</span>
+        <span class="p">}</span>
+
+        <span class="n">wes_turbine</span> <span class="o">=</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;wind_farm&quot;</span><span class="p">][</span><span class="s2">&quot;turbines&quot;</span><span class="p">]</span>
+
+        <span class="n">new_turbine</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;turbine_type&quot;</span><span class="p">:</span> <span class="n">wes_turbine</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;generator_efficiency&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="s2">&quot;hub_height&quot;</span><span class="p">:</span> <span class="n">wes_turbine</span><span class="p">[</span><span class="s2">&quot;hub_height&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;pP&quot;</span><span class="p">:</span> <span class="mf">1.88</span><span class="p">,</span>
+            <span class="s2">&quot;pT&quot;</span><span class="p">:</span> <span class="mf">1.88</span><span class="p">,</span>         <span class="c1"># How to set these?</span>
+            <span class="s2">&quot;rotor_diameter&quot;</span><span class="p">:</span> <span class="n">wes_turbine</span><span class="p">[</span><span class="s2">&quot;rotor_diameter&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;TSR&quot;</span><span class="p">:</span> <span class="mf">8.0</span><span class="p">,</span>         <span class="c1"># Can we calculate this from diameter and power curve?</span>
+            <span class="s2">&quot;ref_density_cp_ct&quot;</span><span class="p">:</span> <span class="mf">1.225</span><span class="p">,</span>
+            <span class="s2">&quot;ref_tilt_cp_ct&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>       <span class="c1"># Set to 0</span>
+            <span class="s2">&quot;power_thrust_table&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;power&quot;</span><span class="p">:</span> <span class="n">wes_turbine</span><span class="p">[</span><span class="s2">&quot;performance&quot;</span><span class="p">][</span><span class="s2">&quot;Cp_curve&quot;</span><span class="p">][</span><span class="s2">&quot;Cp_values&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;thrust&quot;</span><span class="p">:</span> <span class="n">wes_turbine</span><span class="p">[</span><span class="s2">&quot;performance&quot;</span><span class="p">][</span><span class="s2">&quot;Ct_curve&quot;</span><span class="p">][</span><span class="s2">&quot;Ct_values&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;wind_speed&quot;</span><span class="p">:</span> <span class="n">wes_turbine</span><span class="p">[</span><span class="s2">&quot;performance&quot;</span><span class="p">][</span><span class="s2">&quot;Ct_curve&quot;</span><span class="p">][</span><span class="s2">&quot;Ct_wind_speeds&quot;</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;farm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;layout_x&quot;</span><span class="p">:</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;wind_farm&quot;</span><span class="p">][</span><span class="s2">&quot;layouts&quot;</span><span class="p">][</span><span class="s2">&quot;initial_layout&quot;</span><span class="p">][</span><span class="s2">&quot;coordinates&quot;</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;layout_y&quot;</span><span class="p">:</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;wind_farm&quot;</span><span class="p">][</span><span class="s2">&quot;layouts&quot;</span><span class="p">][</span><span class="s2">&quot;initial_layout&quot;</span><span class="p">][</span><span class="s2">&quot;coordinates&quot;</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;turbine_type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">new_turbine</span><span class="p">]</span>
+        <span class="p">}</span>
+
+        <span class="n">wes_analysis</span> <span class="o">=</span> <span class="n">wes</span><span class="p">[</span><span class="s2">&quot;attributes&quot;</span><span class="p">][</span><span class="s2">&quot;analyses&quot;</span><span class="p">]</span>
+        <span class="n">_velocity_model_mapping</span> <span class="o">=</span> <span class="n">WAKE_MODEL_MAPPING</span><span class="p">[</span><span class="n">wes_analysis</span><span class="p">[</span><span class="s2">&quot;wake_model&quot;</span><span class="p">][</span><span class="s2">&quot;velocity&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]]</span>
+        <span class="n">_velocity_model</span> <span class="o">=</span> <span class="n">_velocity_model_mapping</span><span class="p">[</span><span class="s2">&quot;model_ref&quot;</span><span class="p">]</span>
+        <span class="n">_velocity_model_parameters</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">k</span><span class="p">:</span> <span class="n">wes_analysis</span><span class="p">[</span><span class="s2">&quot;wake_model&quot;</span><span class="p">][</span><span class="s2">&quot;velocity&quot;</span><span class="p">][</span><span class="s2">&quot;parameters&quot;</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_velocity_model_mapping</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="n">_deflection_model_mapping</span> <span class="o">=</span> <span class="n">WAKE_MODEL_MAPPING</span><span class="p">[</span><span class="n">wes_analysis</span><span class="p">[</span><span class="s2">&quot;wake_model&quot;</span><span class="p">][</span><span class="s2">&quot;deflection&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]]</span>
+        <span class="n">_deflection_model</span> <span class="o">=</span> <span class="n">_deflection_model_mapping</span><span class="p">[</span><span class="s2">&quot;model_ref&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">_deflection_model</span> <span class="o">!=</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+            <span class="n">_deflection_model_parameters</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">k</span><span class="p">:</span> <span class="n">wes_analysis</span><span class="p">[</span><span class="s2">&quot;wake_model&quot;</span><span class="p">][</span><span class="s2">&quot;deflection&quot;</span><span class="p">][</span><span class="s2">&quot;parameters&quot;</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_deflection_model_mapping</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_deflection_model_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">new_dict</span><span class="p">[</span><span class="s1">&#39;wake&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;model_strings&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;combination_model&#39;</span><span class="p">:</span> <span class="s1">&#39;sosfs&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;deflection_model&#39;</span><span class="p">:</span> <span class="n">_deflection_model</span><span class="p">,</span>
+                <span class="s1">&#39;turbulence_model&#39;</span><span class="p">:</span> <span class="s1">&#39;crespo_hernandez&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;velocity_model&#39;</span><span class="p">:</span> <span class="n">_velocity_model</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;enable_secondary_steering&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;enable_yaw_added_recovery&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;enable_transverse_velocities&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;wake_deflection_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">_deflection_model</span><span class="p">:</span> <span class="n">_deflection_model_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;wake_velocity_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">_velocity_model</span><span class="p">:</span> <span class="n">_velocity_model_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;wake_turbulence_parameters&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;crespo_hernandez&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;initial&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                    <span class="s1">&#39;constant&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+                    <span class="s1">&#39;ai&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+                    <span class="s1">&#39;downstream&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.32</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">new_dict</span>
+
+    <span class="c1">### Post processing</span>
+
+<div class="viewcode-block" id="WCompFloris.AEP">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris.AEP">[docs]</a>
+    <span class="k">def</span> <span class="nf">AEP</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">get_farm_AEP</span><span class="p">()</span></div>
+
+
+    <span class="c1"># 1D line plots</span>
+
+<div class="viewcode-block" id="WCompFloris.vertical_profile_plot">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris.vertical_profile_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">vertical_profile_plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">zmax</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates the plot figures via matplotlib, but it does not show them.</span>
+<span class="sd">        This requires plt.show() to be called when appropriate.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): The wind direction to use for the visualization</span>
+<span class="sd">            resolution (tuple): The (x, y) resolution of the horizontal plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+        <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_y_plane</span><span class="p">(</span>
+            <span class="n">crossstream_dist</span><span class="o">=</span><span class="n">y_coordinate</span><span class="p">,</span>
+            <span class="n">wd</span><span class="o">=</span><span class="p">[</span><span class="n">wind_direction</span><span class="p">],</span>
+            <span class="n">x_resolution</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">z_resolution</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">x_bounds</span><span class="o">=</span><span class="p">[</span><span class="n">x_coordinate</span><span class="p">,</span> <span class="n">x_coordinate</span><span class="p">],</span>
+            <span class="n">z_bounds</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">zmax</span><span class="p">],</span>
+            <span class="n">yaw_angles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="n">WakeProfile</span><span class="p">(</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">u</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">plot_profile</span><span class="p">(</span>
+            <span class="n">profile</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+            <span class="c1"># direction=&#39;x&#39;,</span>
+            <span class="c1"># component=&#39;u&#39;,</span>
+            <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_COLOR</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_MARKER</span><span class="p">,</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINESTYLE</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LEGEND</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WCompFloris.streamwise_profile_plot">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris.streamwise_profile_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">streamwise_profile_plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">xmin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">xmax</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates the plot figures via matplotlib, but it does not show them.</span>
+<span class="sd">        This requires plt.show() to be called when appropriate.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): The wind direction to use for the visualization</span>
+<span class="sd">            resolution (tuple): The (x, y) resolution of the horizontal plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+        <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_y_plane</span><span class="p">(</span>
+            <span class="n">crossstream_dist</span><span class="o">=</span><span class="n">y_coordinate</span><span class="p">,</span>
+            <span class="n">wd</span><span class="o">=</span><span class="p">[</span><span class="n">wind_direction</span><span class="p">],</span>
+            <span class="n">x_resolution</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+            <span class="n">z_resolution</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+            <span class="n">x_bounds</span><span class="o">=</span><span class="p">[</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">],</span>
+            <span class="n">z_bounds</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hub_height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hub_height</span><span class="p">],</span>
+            <span class="n">yaw_angles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="n">WakeProfile</span><span class="p">(</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">u</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">plot_profile</span><span class="p">(</span>
+            <span class="n">profile</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+            <span class="c1"># direction=&#39;x&#39;,</span>
+            <span class="c1"># component=&#39;u&#39;,</span>
+            <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_COLOR</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_MARKER</span><span class="p">,</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINESTYLE</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LEGEND</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WCompFloris.xsection_profile_plot">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris.xsection_profile_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">xsection_profile_plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">ymin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">ymax</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+        <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_horizontal_plane</span><span class="p">(</span>
+            <span class="n">height</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">hub_height</span><span class="p">,</span>
+            <span class="n">wd</span><span class="o">=</span><span class="p">[</span><span class="n">wind_direction</span><span class="p">],</span>
+            <span class="c1"># x_resolution=resolution[0],</span>
+            <span class="n">y_resolution</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">x_bounds</span><span class="o">=</span><span class="p">[</span><span class="n">x_coordinate</span><span class="p">,</span> <span class="n">x_coordinate</span><span class="p">],</span>
+            <span class="n">y_bounds</span><span class="o">=</span><span class="p">[</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">],</span>
+            <span class="n">yaw_angles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="n">WakeProfile</span><span class="p">(</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">u</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">plot_profile</span><span class="p">(</span>
+            <span class="n">profile</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+            <span class="c1"># direction=&#39;y&#39;,</span>
+            <span class="c1"># component=&#39;u&#39;,</span>
+            <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_COLOR</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_MARKER</span><span class="p">,</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINESTYLE</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LEGEND</span>
+        <span class="p">)</span></div>
+
+
+    <span class="c1"># 2D contour plots</span>
+
+<div class="viewcode-block" id="WCompFloris.horizontal_contour">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris.horizontal_contour">[docs]</a>
+    <span class="k">def</span> <span class="nf">horizontal_contour</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">resolution</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakePlane</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates the plot figures via matplotlib, but it does not show them.</span>
+<span class="sd">        This requires plt.show() to be called when appropriate.</span>
+<span class="sd">        NOTE:</span>
+<span class="sd">        - The height of the plane is the hub height of the first wind turbine.</span>
+<span class="sd">        If there are different hub heights, handle this appropriately.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): The wind direction to use for the visualization</span>
+<span class="sd">            resolution (tuple): The (x, y) resolution of the horizontal plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># fig, axarr = plt.subplots(1, 1)</span>
+        <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_horizontal_plane</span><span class="p">(</span>
+            <span class="n">height</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">hub_height</span><span class="p">,</span>
+            <span class="n">wd</span><span class="o">=</span><span class="p">[</span><span class="n">wind_direction</span><span class="p">],</span>
+            <span class="n">x_resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">y_resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">yaw_angles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># print(&quot;FLORIS bounds&quot;)</span>
+        <span class="c1"># print(min(cut_plane.df.x1), max(cut_plane.df.x1))</span>
+        <span class="c1"># print(min(cut_plane.df.x2), max(cut_plane.df.x2))</span>
+        <span class="n">plane</span> <span class="o">=</span> <span class="n">WakePlane</span><span class="p">(</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">u</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">normal_vector</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">resolution</span>
+        <span class="p">)</span>
+        <span class="n">plot_plane</span><span class="p">(</span>
+            <span class="n">plane</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="c1">#axarr,</span>
+            <span class="c1"># cmap=&#39;Blues_r&#39;,</span>
+            <span class="c1"># color_bar=True,</span>
+            <span class="n">clevels</span><span class="o">=</span><span class="mi">100</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">plane</span></div>
+
+
+<div class="viewcode-block" id="WCompFloris.xsection_contour">
+<a class="viewcode-back" href="../../_autosummary/wcomp.floris_interface.html#wcomp.floris_interface.WCompFloris.xsection_contour">[docs]</a>
+    <span class="k">def</span> <span class="nf">xsection_contour</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">resolution</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span>
+        <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakePlane</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates the plot figures via matplotlib, but it does not show them.</span>
+<span class="sd">        This requires plt.show() to be called when appropriate.</span>
+<span class="sd">        NOTE:</span>
+<span class="sd">        - The height of the plane is the hub height of the first wind turbine.</span>
+<span class="sd">        If there are different hub heights, handle this appropriately.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): The wind direction to use for the visualization</span>
+<span class="sd">            resolution (tuple): The (x, y) resolution of the horizontal plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_cross_plane</span><span class="p">(</span>
+            <span class="n">downstream_dist</span><span class="o">=</span><span class="n">x_coordinate</span><span class="p">,</span>
+            <span class="n">wd</span><span class="o">=</span><span class="p">[</span><span class="n">wind_direction</span><span class="p">],</span>
+            <span class="n">y_resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">z_resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">yaw_angles</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">yaw_angles</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">plane</span> <span class="o">=</span> <span class="n">WakePlane</span><span class="p">(</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">u</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">normal_vector</span><span class="p">,</span>
+            <span class="n">cut_plane</span><span class="o">.</span><span class="n">resolution</span>
+        <span class="p">)</span>
+        <span class="n">plot_plane</span><span class="p">(</span>
+            <span class="n">plane</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span>
+            <span class="n">color_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">clevels</span><span class="o">=</span><span class="mi">100</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">plane</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rafael Mudafort
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

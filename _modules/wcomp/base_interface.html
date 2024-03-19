@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="python" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wcomp.base_interface &#8212; wcomp</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=30a733bc"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7LZJG24QM5"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-7LZJG24QM5');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-7LZJG24QM5');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/wcomp/base_interface';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">wcomp</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Wakes Compared (wcomp)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture and Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api_docs.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.base_interface.html">wcomp.base_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.floris_interface.html">wcomp.floris_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.foxes_interface.html">wcomp.foxes_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.pywake_interface.html">wcomp.pywake_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.output_struct.html">wcomp.output_struct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/wcomp.plotting.html">wcomp.plotting</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp/issues/new?title=Issue%20on%20page%20%2F_modules/wcomp/base_interface.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for wcomp.base_interface</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span> <span class="nn">.output_struct</span> <span class="kn">import</span> <span class="n">WakeProfile</span><span class="p">,</span> <span class="n">WakePlane</span>
+
+
+<div class="viewcode-block" id="WCompBase">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase">[docs]</a>
+<span class="k">class</span> <span class="nc">WCompBase</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    WCompBase is an abstract base class that defines the interfaces required</span>
+<span class="sd">    to conform to the `wcomp` framework. This class cannot be used directly. Instead,</span>
+<span class="sd">    it should be used to create a subclass, and all attributes and functions</span>
+<span class="sd">    described here should be implemented in the subclass. See function docstrings</span>
+<span class="sd">    for implementation details.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">LINE_PLOT_COLOR</span> <span class="o">=</span> <span class="s2">&quot;OVERWRITE&quot;</span>   <span class="c1"># Color to use for all line plots; use matplotlib color codes</span>
+    <span class="n">LEGEND</span> <span class="o">=</span> <span class="s2">&quot;OVERWRITE&quot;</span>            <span class="c1"># Legend entry; typically should be the name of the corresponding software</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The initialization for all subclasses must create the results from the</span>
+<span class="sd">        corresponding software, so that they are ready for post processing in</span>
+<span class="sd">        the other functions of this class. This typically consists of at least</span>
+<span class="sd">        the following:</span>
+<span class="sd">        1. Load the windIO input file describing the case</span>
+<span class="sd">        2. Initialize all required data for the corresponding model</span>
+<span class="sd">        3. Complete all calculations defined by the windIO case definition</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            input_file (str | Path): Path to a windIO case input file</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.__init__&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">rotor_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Virtual property to get the characteristic rotor diameter for use throughout the</span>
+<span class="sd">        post processing and plotting functions. While every turbine may not have the same</span>
+<span class="sd">        rotor diameter, one should be chosen as a reference value to set relative distances.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Characteristic rotor diameter</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.rotor_diameter&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hub_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Virtual property to get the characteristic hub height for use throughout the</span>
+<span class="sd">        post processing and plotting functions. While every turbine may not have the same</span>
+<span class="sd">        hub height, one should be chosen as a reference value to set relative distances.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Characteristic hub height</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.hub_height&quot;</span><span class="p">)</span>
+
+    <span class="c1">### Post processing</span>
+
+<div class="viewcode-block" id="WCompBase.AEP">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase.AEP">[docs]</a>
+    <span class="k">def</span> <span class="nf">AEP</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the annual energy production (AEP) for the current case.</span>
+<span class="sd">        This is typically implemented in the corresponding software, so</span>
+<span class="sd">        it should not be computed here.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Annual energy production (AEP) for the current case in megawatts-hours (MWh).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.AEP&quot;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># 1D line plots</span>
+
+<div class="viewcode-block" id="WCompBase.vertical_profile_plot">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase.vertical_profile_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">vertical_profile_plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">zmax</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function produces a 1D plot of the velocity profile in the z-x plane</span>
+<span class="sd">        where z is normal to the ground and x is streamwise. A sample line is produced</span>
+<span class="sd">        from the ground to the height `zmax` at the location (`x_coordinate`, `y_coordinate`)</span>
+<span class="sd">        to sample the velocities.</span>
+
+<span class="sd">        To implement this function, the subclass should produce a line of the u-component of</span>
+<span class="sd">        velocities at the specified location and height. The {py:class}`wcomp.plotting.WakeProfile`</span>
+<span class="sd">        class should be used to store the data. Then, the {py:meth}`wcomp.plotting.plot_profile`</span>
+<span class="sd">        function should be used to produce the plot. A sample implementation is shown below.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): Incoming wind direction in degrees with West at 270 degrees.</span>
+<span class="sd">            x_coordinate (float): X-coordinate of the line to sample.</span>
+<span class="sd">            y_coordinate (float): Y-coordinate of the line to sample.</span>
+<span class="sd">            zmax (float): The end-point of the sample line in the vertical direction.</span>
+<span class="sd">                The line starts at the ground.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            WakeProfile: The profile of wake data</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                # Call the wake model to produce the velocities at the sample line</span>
+<span class="sd">                u, v, w = wake_model(...)           # Note v and w are not used</span>
+<span class="sd">                x, y, z = wake_model.get_points()   # Get the coordinates of the sample points</span>
+
+<span class="sd">                # Create a WakeProfile object to store the data</span>
+<span class="sd">                profile = WakeProfile(z, u)</span>
+
+<span class="sd">                # Plot the profile</span>
+<span class="sd">                ax = plt.gca()      # Get the current pyplot axis to place the plot</span>
+<span class="sd">                plot_profile(</span>
+<span class="sd">                    profile,</span>
+<span class="sd">                    ax=ax,</span>
+<span class="sd">                    color=self.LINE_PLOT_COLOR,</span>
+<span class="sd">                    marker=self.LINE_PLOT_MARKER,</span>
+<span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
+<span class="sd">                    label=self.LEGEND</span>
+<span class="sd">                )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.vertical_profile_plot&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WCompBase.streamwise_profile_plot">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase.streamwise_profile_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">streamwise_profile_plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">xmin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">xmax</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function produces a 1D plot of the velocity profile in the z-x plane</span>
+<span class="sd">        where z is normal to the ground and x is streamwise. A sample line is produced</span>
+<span class="sd">        from `xmin` to `xmax` at the hub height and `y_coordinate` to sample the velocities.</span>
+
+<span class="sd">        To implement this function, the subclass should produce a line of the u-component of</span>
+<span class="sd">        velocities at the specified location and height. The {py:class}`wcomp.plotting.WakeProfile`</span>
+<span class="sd">        class should be used to store the data. Then, the {py:meth}`wcomp.plotting.plot_profile`</span>
+<span class="sd">        function should be used to produce the plot. A sample implementation is shown below.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): Incoming wind direction in degrees with West at 270 degrees.</span>
+<span class="sd">            y_coordinate (float): Y-coordinate of the line to sample.</span>
+<span class="sd">            xmin (float): Starting point of the sample line in the streamwise direction.</span>
+<span class="sd">            xmax (float): End point of the sample line in the streamwise direction.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            WakeProfile: The profile of wake data</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                # Call the wake model to produce the velocities at the sample line</span>
+<span class="sd">                u, v, w = wake_model(...)           # Note v and w are not used</span>
+<span class="sd">                x, y, z = wake_model.get_points()   # Get the coordinates of the sample points</span>
+
+<span class="sd">                # Create a WakeProfile object to store the data</span>
+<span class="sd">                profile = WakeProfile(x, u)</span>
+
+<span class="sd">                # Plot the profile</span>
+<span class="sd">                ax = plt.gca()      # Get the current pyplot axis to place the plot</span>
+<span class="sd">                plot_profile(</span>
+<span class="sd">                    profile,</span>
+<span class="sd">                    ax=ax,</span>
+<span class="sd">                    color=self.LINE_PLOT_COLOR,</span>
+<span class="sd">                    marker=self.LINE_PLOT_MARKER,</span>
+<span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
+<span class="sd">                    label=self.LEGEND</span>
+<span class="sd">                )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.streamwise_profile_plot&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WCompBase.xsection_profile_plot">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase.xsection_profile_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">xsection_profile_plot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">ymin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">ymax</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakeProfile</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function produces a 1D plot of the velocity profile in the y-z plane</span>
+<span class="sd">        where z is normal to the ground and y is normal to z and the streamwise direction.</span>
+<span class="sd">        A sample line is produced from `ymin` to `ymax` at the hub height and `x_coordinate`</span>
+<span class="sd">        to sample the velocities.</span>
+
+<span class="sd">        To implement this function, the subclass should produce a line of the u-component of</span>
+<span class="sd">        velocities at the specified location and height. The {py:class}`wcomp.plotting.WakeProfile`</span>
+<span class="sd">        class should be used to store the data. Then, the {py:meth}`wcomp.plotting.plot_profile`</span>
+<span class="sd">        function should be used to produce the plot. A sample implementation is shown below.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): Incoming wind direction in degrees with West at 270 degrees.</span>
+<span class="sd">            x_coordinate (float): X-coordinate of the line to sample.</span>
+<span class="sd">            ymin (float): Starting point of the sample line in the lateral direction.</span>
+<span class="sd">            ymax (float): End point of the sample line in the lateral direction.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            WakeProfile: The profile of wake data</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                # Call the wake model to produce the velocities at the sample line</span>
+<span class="sd">                u, v, w = wake_model(...)           # Note v and w are not used</span>
+<span class="sd">                x, y, z = wake_model.get_points()   # Get the coordinates of the sample points</span>
+
+<span class="sd">                # Create a WakeProfile object to store the data</span>
+<span class="sd">                profile = WakeProfile(y, u)</span>
+
+<span class="sd">                # Plot the profile</span>
+<span class="sd">                ax = plt.gca()      # Get the current pyplot axis to place the plot</span>
+<span class="sd">                plot_profile(</span>
+<span class="sd">                    profile,</span>
+<span class="sd">                    ax=ax,</span>
+<span class="sd">                    color=self.LINE_PLOT_COLOR,</span>
+<span class="sd">                    marker=self.LINE_PLOT_MARKER,</span>
+<span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
+<span class="sd">                    label=self.LEGEND</span>
+<span class="sd">                )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.xsection_profile_plot&quot;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># 2D contour plots</span>
+
+<div class="viewcode-block" id="WCompBase.horizontal_contour">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase.horizontal_contour">[docs]</a>
+    <span class="k">def</span> <span class="nf">horizontal_contour</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">resolution</span><span class="p">:</span> <span class="nb">tuple</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakePlane</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function produces a contour plot of the velocity in the x-y plane where</span>
+<span class="sd">        x is streamwise and y is lateral. The contour is located at the hub height.</span>
+<span class="sd">        The extent of the sample plane should be:</span>
+
+<span class="sd">        - x min: 2 rotor diameters upstream of the most upstream turbine</span>
+<span class="sd">        - x max: 10 rotor diameters downstream of the most downstream turbine</span>
+<span class="sd">        - y min,max: 2 rotor diameters outside the most lateral turbines</span>
+
+<span class="sd">        To implement this function, the subclass should produce a plane of the u-component of</span>
+<span class="sd">        velocities with the required bounds. The {py:class}`wcomp.plotting.WakePlane`</span>
+<span class="sd">        class should be used to store the data. Then, the {py:meth}`wcomp.plotting.plot_plane`</span>
+<span class="sd">        function should be used to produce the plot. A sample implementation is shown below.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): Incoming wind direction in degrees with West at 270 degrees.</span>
+<span class="sd">            resolution (tuple): Number of points in the (x, y) directions for the contour plot grid</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            WakePlane: The plane of wake data</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                # Call the wake model to produce the velocities at the sample line</span>
+<span class="sd">                u, v, w = wake_model(...)           # Note v and w are not used</span>
+<span class="sd">                x, y, z = wake_model.get_points()   # Get the coordinates of the sample points</span>
+
+<span class="sd">                # Create a WakePlane object to store the data</span>
+<span class="sd">                plane = WakePlane(</span>
+<span class="sd">                    x,      # If 2d array, use x.flatten()</span>
+<span class="sd">                    y,      # ^ ^ ^</span>
+<span class="sd">                    u,</span>
+<span class="sd">                    &quot;z&quot;,</span>
+<span class="sd">                    resolution,</span>
+<span class="sd">                )</span>
+
+<span class="sd">                # Plot the plane</span>
+<span class="sd">                ax = plt.gca()      # Get the current pyplot axis to place the plot</span>
+<span class="sd">                plot_plane(</span>
+<span class="sd">                    plane,</span>
+<span class="sd">                    ax=ax,</span>
+<span class="sd">                    color=self.LINE_PLOT_COLOR,</span>
+<span class="sd">                    marker=self.LINE_PLOT_MARKER,</span>
+<span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
+<span class="sd">                    label=self.LEGEND</span>
+<span class="sd">                )</span>
+
+<span class="sd">                return plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.horizontal_contour&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WCompBase.xsection_contour">
+<a class="viewcode-back" href="../../_autosummary/wcomp.base_interface.html#wcomp.base_interface.WCompBase.xsection_contour">[docs]</a>
+    <span class="k">def</span> <span class="nf">xsection_contour</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">resolution</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span>
+        <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakePlane</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function produces a contour plot of the velocity in the y-z plane where</span>
+<span class="sd">        y is lateral and z is vertical. The contour is located in the streamwise direction at the</span>
+<span class="sd">        given `x_coordinate`. The extent of the sample plane should be:</span>
+
+<span class="sd">        - y min,max: 2 rotor diameters outside the most lateral turbines</span>
+<span class="sd">        - z min: z=0.0</span>
+<span class="sd">        - z max: 6 * hub height</span>
+
+<span class="sd">        To implement this function, the subclass should produce a plane of the u-component of</span>
+<span class="sd">        velocities with the required bounds. The {py:class}`wcomp.plotting.WakePlane`</span>
+<span class="sd">        class should be used to store the data. Then, the {py:meth}`wcomp.plotting.plot_plane`</span>
+<span class="sd">        function should be used to produce the plot. A sample implementation is shown below.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wind_direction (float): Wind direction to align the plot in the visualization in</span>
+<span class="sd">                degrees with West being 270 degrees and North being 0 degrees</span>
+<span class="sd">            resolution (tuple): Grid resolution for the contour plot;</span>
+<span class="sd">                element 0 is the resolution in y and element 1 is the resolution in z</span>
+<span class="sd">            x_coordinate (float): The streamwise location for the extracted plane</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This function must be implemented in a subclass</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            WakePlane: The plane of wake data</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                # Call the wake model to produce the velocities at the sample line</span>
+<span class="sd">                u, v, w = wake_model(...)           # Note v and w are not used</span>
+<span class="sd">                x, y, z = wake_model.get_points()   # Get the coordinates of the sample points</span>
+
+<span class="sd">                # Create a WakePlane object to store the data</span>
+<span class="sd">                plane = WakePlane(</span>
+<span class="sd">                    y,      # If 2d array, use x.flatten()</span>
+<span class="sd">                    z,      # ^ ^ ^</span>
+<span class="sd">                    u,</span>
+<span class="sd">                    &quot;x&quot;,</span>
+<span class="sd">                    resolution,</span>
+<span class="sd">                )</span>
+
+<span class="sd">                # Plot the plane</span>
+<span class="sd">                ax = plt.gca()      # Get the current pyplot axis to place the plot</span>
+<span class="sd">                plot_plane(</span>
+<span class="sd">                    plane,</span>
+<span class="sd">                    ax=ax,</span>
+<span class="sd">                    color=self.LINE_PLOT_COLOR,</span>
+<span class="sd">                    marker=self.LINE_PLOT_MARKER,</span>
+<span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
+<span class="sd">                    label=self.LEGEND</span>
+<span class="sd">                )</span>
+
+<span class="sd">                return plane</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.xsection_contour&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rafael Mudafort
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
