@@ -1,0 +1,1242 @@
+
+<!DOCTYPE html>
+
+
+<html lang="python" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Torque 2024 - 4 turbine cases &#8212; wcomp</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=30a733bc"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7LZJG24QM5"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-7LZJG24QM5');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-7LZJG24QM5');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'torque2024_4turbine';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Architecture and Design" href="architecture.html" />
+    <link rel="prev" title="Torque 2024 - 1 turbine cases" href="torque2024_1turbine.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">wcomp</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Wakes Compared (wcomp)
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="wesc2023_demo.html">WESC 2023 - Simple Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torque2024_1turbine.html">Torque 2024 - 1 turbine cases</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Torque 2024 - 4 turbine cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture and Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api_docs.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.base_interface.html">wcomp.base_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.floris_interface.html">wcomp.floris_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.foxes_interface.html">wcomp.foxes_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.pywake_interface.html">wcomp.pywake_interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.output_struct.html">wcomp.output_struct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.plotting.html">wcomp.plotting</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp/edit/main/docs/torque2024_4turbine.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rafmudaf/wcomp/issues/new?title=Issue%20on%20page%20%2Ftorque2024_4turbine.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/torque2024_4turbine.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Torque 2024 - 4 turbine cases</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-models">Velocity models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jensen">Jensen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bastankhah-porte-agel-2014">Bastankhah / Porte Agel 2014</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bastankhah-porte-agel-2016">Bastankhah / Porte Agel 2016</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#turbopark">TurbOPark</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-deflection-models">Wake deflection models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jimenez">Jimenez</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Bastankhah / Porte Agel 2016</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="torque-2024-4-turbine-cases">
+<h1>Torque 2024 - 4 turbine cases<a class="headerlink" href="#torque-2024-4-turbine-cases" title="Link to this heading">#</a></h1>
+<p>These cases place 4 turbines in a line with a spacing of 5 rotor diameters, and the turbine
+diameters are 240 meters.
+The layout is:</p>
+<ul class="simple">
+<li><p>x: [0.0, 1200.0, 2400.0, 3600.0]</p></li>
+<li><p>y: [0.0, 0.0, 0.0, 0.0]</p></li>
+</ul>
+<p>The wind speed is 8 m/s and the wind direction is 270 degrees.</p>
+<p>The following analytical wake models are included in FLORIS, foxes, and PyWake.</p>
+<p><strong>Velocity Models</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wake Model</p></th>
+<th class="head"><p>FLORIS</p></th>
+<th class="head"><p>foxes</p></th>
+<th class="head"><p>PyWake</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Jensen 1983</strong></p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y (NOJ)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bastankhah / Porte Agel 2014</strong></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bastankhah / Porte Agel 2016</strong></p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>IEA Task 37 Bastankhah</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Niayifar / Porté-Agel 2016</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zong / Porté-Agel 2020</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Carbajo Fuertes / Markfor / Porté-Age 2018</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blondel and Cathelain 2020</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Larson 2009</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Empirical Gauss</p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Cumulative Curl</p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TurbOPark (Nygaard 2022)</strong></p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p>Y (TurboNOJ)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Deflection Models</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wake Model</p></th>
+<th class="head"><p>FLORIS</p></th>
+<th class="head"><p>foxes</p></th>
+<th class="head"><p>PyWake</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Jimenez</strong></p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bastankhah / Porte Agel 2016</strong></p></td>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Empirical Gauss</p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Larsen / Hill</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># stdlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># wcomp</span>
+<span class="kn">from</span> <span class="nn">wcomp</span> <span class="kn">import</span> <span class="n">WCompFloris</span><span class="p">,</span> <span class="n">WCompPyWake</span><span class="p">,</span> <span class="n">WCompFoxes</span>
+<span class="kn">from</span> <span class="nn">wcomp.plotting</span> <span class="kn">import</span> <span class="n">plot_plane</span>
+
+<span class="n">CASE_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;cases_torque2024/four_turbine&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="velocity-models">
+<h2>Velocity models<a class="headerlink" href="#velocity-models" title="Link to this heading">#</a></h2>
+<section id="jensen">
+<h3>Jensen<a class="headerlink" href="#jensen" title="Link to this heading">#</a></h3>
+<p>This is the Jensen model as described in the paper:
+A note on wind generator interaction (1983)
+<a class="reference external" href="https://backend.orbit.dtu.dk/ws/portalfiles/portal/55857682/ris_m_2411.pdf">https://backend.orbit.dtu.dk/ws/portalfiles/portal/55857682/ris_m_2411.pdf</a></p>
+<p>There, the wake width is given as 0.1 on pages 6 and 8.
+PyWake has 0.1 as default
+FLORIS has 0.05 as default, but it is changed to 0.1 here.
+foxes has a set of predefined Jensen wake models available, but you are expected to create your own, as needed. That is done here with k=0.1.</p>
+<p>Implemented in: FLORIS, foxes, PyWake</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">this_case</span> <span class="o">=</span> <span class="n">CASE_DIR</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;jensen/wind_energy_system.yaml&#39;</span><span class="p">)</span>
+<span class="n">floris_1turbine</span> <span class="o">=</span> <span class="n">WCompFloris</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="n">foxes_1turbine</span> <span class="o">=</span> <span class="n">WCompFoxes</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="n">pywake_1turbine</span> <span class="o">=</span> <span class="n">WCompPyWake</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+
+<span class="n">ROTOR_D</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">rotor_diameter</span>
+
+<span class="c1"># NOTE: Pywake plotting uses plt.gca -&gt; plt.gcf... get current figure meaning it will add onto the current figure</span>
+<span class="c1"># fig, ax = plt.subplots(4, 1, figsize=(8,15))</span>
+
+<span class="n">XMIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">XMAX</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">floris_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">foxes_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">pywake_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Streamwise velocity profile&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;U (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ybound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># YMIN = -2 * ROTOR_D</span>
+<span class="c1"># YMAX =  2 * ROTOR_D</span>
+
+<span class="c1"># fig, ax = plt.subplots(3, 1)</span>
+<span class="c1"># fig.suptitle(&quot;Cross section velocity profile&quot;)</span>
+
+<span class="c1"># X_D = [1, 5, 10]</span>
+<span class="c1"># for i, D_X in enumerate(X_D):</span>
+<span class="c1">#     plt.axes(ax[i])</span>
+<span class="c1">#     floris_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     foxes_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     pywake_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     ax[i].set_title(f&quot;{D_X} D&quot;)</span>
+<span class="c1">#     ax[i].set_ylabel(&quot;U (m/s)&quot;)</span>
+<span class="c1">#     ax[i].set_ybound(lower=0.0, upper=12.0)</span>
+<span class="c1">#     ax[i].grid()</span>
+<span class="c1">#     if i &lt; len(X_D) - 1:</span>
+<span class="c1">#         ax[i].xaxis.set_ticklabels([])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ax[i].set_xlabel(&quot;Y (m)&quot;)</span>
+<span class="c1">#         ax[i].legend()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Turbine 0, T0: windio_turbine
+Turbine 1, T1: windio_turbine
+Turbine 2, T2: windio_turbine
+Turbine 3, T3: windio_turbine
+</pre></div>
+</div>
+<img alt="_images/24ad31a5ccc847a1aac3d0ebb49d8b05a38d8edaf9ef8fa9c1d71bce7eed0b5d.png" src="_images/24ad31a5ccc847a1aac3d0ebb49d8b05a38d8edaf9ef8fa9c1d71bce7eed0b5d.png" />
+</div>
+</div>
+</section>
+<section id="bastankhah-porte-agel-2014">
+<h3>Bastankhah / Porte Agel 2014<a class="headerlink" href="#bastankhah-porte-agel-2014" title="Link to this heading">#</a></h3>
+<p>A new analytical model for wind-turbine wakes
+<a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0960148114000317">https://www.sciencedirect.com/science/article/abs/pii/S0960148114000317</a></p>
+<p>k*, the wake growth rate d-sigma/dx, is the only parameter</p>
+<p>Implemented in: foxes, PyWake</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">this_case</span> <span class="o">=</span> <span class="n">CASE_DIR</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;bastankhah2014/wind_energy_system.yaml&#39;</span><span class="p">)</span>
+<span class="c1"># floris_1turbine = WCompFloris(this_case)  # Not implemented</span>
+<span class="n">foxes_1turbine</span> <span class="o">=</span> <span class="n">WCompFoxes</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="n">pywake_1turbine</span> <span class="o">=</span> <span class="n">WCompPyWake</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+
+<span class="n">ROTOR_D</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">rotor_diameter</span>
+
+<span class="n">XMIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">XMAX</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="c1"># floris_1turbine.streamwise_profile_plot(wind_direction=270, y_coordinate=0.0, xmin=XMIN, xmax=XMAX)</span>
+<span class="n">foxes_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">pywake_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Streamwise velocity profile&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;U (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ybound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+<span class="c1"># YMIN = -2 * ROTOR_D</span>
+<span class="c1"># YMAX =  2 * ROTOR_D</span>
+
+<span class="c1"># fig, ax = plt.subplots(3, 1)</span>
+<span class="c1"># fig.suptitle(&quot;Cross section velocity profile&quot;)</span>
+
+<span class="c1"># X_D = [1, 5, 10]</span>
+<span class="c1"># for i, D_X in enumerate(X_D):</span>
+<span class="c1">#     plt.axes(ax[i])</span>
+<span class="c1">#     # floris_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     foxes_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     pywake_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     ax[i].set_title(f&quot;{D_X} D&quot;)</span>
+<span class="c1">#     ax[i].set_ylabel(&quot;U (m/s)&quot;)</span>
+<span class="c1">#     ax[i].set_ybound(lower=0.0, upper=12.0)</span>
+<span class="c1">#     ax[i].grid()</span>
+<span class="c1">#     if i &lt; len(X_D) - 1:</span>
+<span class="c1">#         ax[i].xaxis.set_ticklabels([])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ax[i].set_xlabel(&quot;Y (m)&quot;)</span>
+<span class="c1">#         ax[i].legend()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Turbine 0, T0: windio_turbine
+Turbine 1, T1: windio_turbine
+Turbine 2, T2: windio_turbine
+Turbine 3, T3: windio_turbine
+</pre></div>
+</div>
+<img alt="_images/bc15e833ba328b75bb48ddb993b3a1d507e1f825b23287fba465906aae33840b.png" src="_images/bc15e833ba328b75bb48ddb993b3a1d507e1f825b23287fba465906aae33840b.png" />
+</div>
+</div>
+</section>
+<section id="bastankhah-porte-agel-2016">
+<h3>Bastankhah / Porte Agel 2016<a class="headerlink" href="#bastankhah-porte-agel-2016" title="Link to this heading">#</a></h3>
+<p>Experimental and theoretical study of wind turbine wakes in yawed conditions
+<a class="reference external" href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/experimental-and-theoretical-study-of-wind-turbine-wakes-in-yawed-conditions/400859134E38F340C8811FD7AAD0CE05">https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/experimental-and-theoretical-study-of-wind-turbine-wakes-in-yawed-conditions/400859134E38F340C8811FD7AAD0CE05</a></p>
+<p>ky, kz are wake growth rates in the y and z directions
+Eq 6.16 has parameters alpha and beta and below says that they are 0.58 and 0.077.
+Equations 7.1 - 7.4 summarize the model but use parameters alpha_star and beta_star, which are 2.32 and 0.154.
+These are related to alpha and beta by:</p>
+<ul class="simple">
+<li><p>alpha_star = 4 * alpha = 4 * 0.58 = 2.32</p></li>
+<li><p>beta_star = 2 * beta = 2 * 0.077 = 0.154</p></li>
+</ul>
+<p>In the near wake, the distribution away from the wake centerline is given by 6.13.</p>
+<p>Implemented in: foxes, PyWake</p>
+<p>NOTE: k is set to 0.022 as mentioned in the last paragraph of section 4.</p>
+<p>NOTE: FLORIS has ky and kz parameters, but foxes uses the same, k, for both.
+This simplification is mentioned in the paper in section 7 Model Predictions.
+For simplicity, FLORIS uses k for both ky and kz.</p>
+<p>NOTE: FLORIS sets ky and kz in the deflection model based on Eq 15 from Niayifar / Porte Agel 2016 <a class="reference external" href="https://www.mdpi.com/1996-1073/9/9/741">https://www.mdpi.com/1996-1073/9/9/741</a>
+ky = kz = ka * I + kb
+ka = 0.3837
+kb = 0.003678
+Where as Bastankhah / Porte Agel 2016 sets ky and kz directly as in the velocity model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">this_case</span> <span class="o">=</span> <span class="n">CASE_DIR</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;bastankhah2016/wind_energy_system.yaml&#39;</span><span class="p">)</span>
+<span class="n">floris_1turbine</span> <span class="o">=</span> <span class="n">WCompFloris</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="n">foxes_1turbine</span> <span class="o">=</span> <span class="n">WCompFoxes</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="c1"># pywake_1turbine = WCompPyWake(this_case)</span>
+
+<span class="n">ROTOR_D</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">rotor_diameter</span>
+
+<span class="n">XMIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">XMAX</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">floris_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">foxes_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="c1"># pywake_1turbine.streamwise_profile_plot(wind_direction=270, y_coordinate=0.0, xmin=XMIN, xmax=XMAX)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Streamwise velocity profile&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;U (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ybound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+<span class="c1"># YMIN = -2 * ROTOR_D</span>
+<span class="c1"># YMAX =  2 * ROTOR_D</span>
+
+<span class="c1"># fig, ax = plt.subplots(3, 1)</span>
+<span class="c1"># fig.suptitle(&quot;Cross section velocity profile&quot;)</span>
+
+<span class="c1"># X_D = [1, 5, 10]</span>
+<span class="c1"># for i, D_X in enumerate(X_D):</span>
+<span class="c1">#     plt.axes(ax[i])</span>
+<span class="c1">#     floris_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     foxes_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     # pywake_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     ax[i].set_title(f&quot;{D_X} D&quot;)</span>
+<span class="c1">#     ax[i].set_ylabel(&quot;U (m/s)&quot;)</span>
+<span class="c1">#     ax[i].set_ybound(lower=0.0, upper=12.0)</span>
+<span class="c1">#     ax[i].grid()</span>
+<span class="c1">#     if i &lt; len(X_D) - 1:</span>
+<span class="c1">#         ax[i].xaxis.set_ticklabels([])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ax[i].set_xlabel(&quot;Y (m)&quot;)</span>
+<span class="c1">#         ax[i].legend()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Turbine 0, T0: windio_turbine
+Turbine 1, T1: windio_turbine
+Turbine 2, T2: windio_turbine
+Turbine 3, T3: windio_turbine
+</pre></div>
+</div>
+<img alt="_images/b9f582b31e1a1f354fc605ece01447e511e2ad3c228ee37df50d16132f520429.png" src="_images/b9f582b31e1a1f354fc605ece01447e511e2ad3c228ee37df50d16132f520429.png" />
+</div>
+</div>
+</section>
+<section id="turbopark">
+<h3>TurbOPark<a class="headerlink" href="#turbopark" title="Link to this heading">#</a></h3>
+<p>Modelling cluster wakes and wind farm blockage
+<a class="reference external" href="https://iopscience.iop.org/article/10.1088/1742-6596/1618/6/062072">https://iopscience.iop.org/article/10.1088/1742-6596/1618/6/062072</a></p>
+<p>The only parameter is A with value = 0.04</p>
+<p>Implemented in: FLORIS, foxes, PyWake, but FLORIS doesn't support plotting so it's excluded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">this_case</span> <span class="o">=</span> <span class="n">CASE_DIR</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;turbopark/wind_energy_system.yaml&#39;</span><span class="p">)</span>
+<span class="c1"># floris_1turbine = WCompFloris(this_case)</span>
+<span class="n">foxes_1turbine</span> <span class="o">=</span> <span class="n">WCompFoxes</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="n">pywake_1turbine</span> <span class="o">=</span> <span class="n">WCompPyWake</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+
+<span class="n">ROTOR_D</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">rotor_diameter</span>
+
+<span class="n">XMIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">XMAX</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="c1"># floris_1turbine.streamwise_profile_plot(wind_direction=270, y_coordinate=0.0, xmin=XMIN, xmax=XMAX)</span>
+<span class="n">foxes_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">pywake_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Streamwise velocity profile&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;U (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ybound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+<span class="c1"># YMIN = -2 * ROTOR_D</span>
+<span class="c1"># YMAX =  2 * ROTOR_D</span>
+
+<span class="c1"># fig, ax = plt.subplots(3, 1)</span>
+<span class="c1"># fig.suptitle(&quot;Cross section velocity profile&quot;)</span>
+
+<span class="c1"># X_D = [1, 5, 10]</span>
+<span class="c1"># for i, D_X in enumerate(X_D):</span>
+<span class="c1">#     plt.axes(ax[i])</span>
+<span class="c1">#     # floris_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     foxes_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     pywake_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     ax[i].set_title(f&quot;{D_X} D&quot;)</span>
+<span class="c1">#     ax[i].set_ylabel(&quot;U (m/s)&quot;)</span>
+<span class="c1">#     ax[i].set_ybound(lower=0.0, upper=12.0)</span>
+<span class="c1">#     ax[i].grid()</span>
+<span class="c1">#     if i &lt; len(X_D) - 1:</span>
+<span class="c1">#         ax[i].xaxis.set_ticklabels([])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ax[i].set_xlabel(&quot;Y (m)&quot;)</span>
+<span class="c1">#         ax[i].legend()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Turbine 0, T0: windio_turbine
+Turbine 1, T1: windio_turbine
+Turbine 2, T2: windio_turbine
+Turbine 3, T3: windio_turbine
+</pre></div>
+</div>
+<img alt="_images/3624892bb3b67ec5e897241f0eaf8e2f4786701d2a664fec38ddf9b3a3851a6a.png" src="_images/3624892bb3b67ec5e897241f0eaf8e2f4786701d2a664fec38ddf9b3a3851a6a.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="wake-deflection-models">
+<h2>Wake deflection models<a class="headerlink" href="#wake-deflection-models" title="Link to this heading">#</a></h2>
+<p>Here we yaw the turbines 10 degrees to activate the wake deflection models.</p>
+<section id="jimenez">
+<h3>Jimenez<a class="headerlink" href="#jimenez" title="Link to this heading">#</a></h3>
+<p>Application of a LES technique to characterize the wake deflection of a wind turbine in yaw
+<a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/we.380">https://onlinelibrary.wiley.com/doi/10.1002/we.380</a></p>
+<p>Using the Jensen velocity deficit model, we compare the Jimenez deflection models.</p>
+<p>beta is the only parameter, and the paper suggest values between 0.9 and 0.125. We use 0.1.</p>
+<p>NOTE: The FLORIS implementation does not correlate to the paper, and there are additional parameters.
+ad, bd are default to 0 so that was left.
+I've set kd to beta.</p>
+<p>Implemented in: FLORIS and PyWake</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">this_case</span> <span class="o">=</span> <span class="n">CASE_DIR</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;jimenez/wind_energy_system.yaml&#39;</span><span class="p">)</span>
+<span class="n">floris_1turbine</span> <span class="o">=</span> <span class="n">WCompFloris</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="c1"># foxes_1turbine = WCompFoxes(this_case)</span>
+<span class="n">pywake_1turbine</span> <span class="o">=</span> <span class="n">WCompPyWake</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+
+<span class="n">ROTOR_D</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">rotor_diameter</span>
+
+<span class="n">XMIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">XMAX</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">floris_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="c1"># foxes_1turbine.streamwise_profile_plot(wind_direction=270, y_coordinate=0.0, xmin=XMIN, xmax=XMAX)</span>
+<span class="n">pywake_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Streamwise velocity profile&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;U (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ybound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+<span class="c1"># YMIN = -2 * ROTOR_D</span>
+<span class="c1"># YMAX =  2 * ROTOR_D</span>
+
+<span class="c1"># fig, ax = plt.subplots(3, 1)</span>
+<span class="c1"># fig.suptitle(&quot;Cross section velocity profile&quot;)</span>
+
+<span class="c1"># X_D = [1, 5, 10]</span>
+<span class="c1"># for i, D_X in enumerate(X_D):</span>
+<span class="c1">#     plt.axes(ax[i])</span>
+<span class="c1">#     floris_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     # foxes_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     pywake_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     ax[i].set_title(f&quot;{D_X} D&quot;)</span>
+<span class="c1">#     ax[i].set_ylabel(&quot;U (m/s)&quot;)</span>
+<span class="c1">#     ax[i].set_ybound(lower=0.0, upper=12.0)</span>
+<span class="c1">#     ax[i].grid()</span>
+<span class="c1">#     if i &lt; len(X_D) - 1:</span>
+<span class="c1">#         ax[i].xaxis.set_ticklabels([])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ax[i].set_xlabel(&quot;Y (m)&quot;)</span>
+<span class="c1">#         ax[i].legend()</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Horizontal streamwise velocity contour&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="n">floris_plane</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">horizontal_contour</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="c1"># foxes_plane = foxes_1turbine.horizontal_contour(wind_direction=270)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="n">pywake_plane</span> <span class="o">=</span> <span class="n">pywake_1turbine</span><span class="o">.</span><span class="n">horizontal_contour</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Diff: FLORIS as basis&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">floris_plane</span> <span class="o">-</span> <span class="n">pywake_plane</span>
+<span class="n">abs_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">diff</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">min_speed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abs_diff</span><span class="p">)</span>
+<span class="n">max_speed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abs_diff</span><span class="p">)</span>
+<span class="n">plot_plane</span><span class="p">(</span>
+    <span class="n">diff</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">min_speed</span><span class="o">=</span><span class="n">min_speed</span><span class="p">,</span>
+    <span class="n">max_speed</span><span class="o">=</span><span class="n">max_speed</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuOr&#39;</span><span class="p">,</span>
+    <span class="n">clevels</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">color_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;FLORIS - PyWake&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># plt.axes(ax[1])</span>
+<span class="c1"># diff = floris_plane - foxes_plane</span>
+<span class="c1"># abs_diff = np.abs(diff.values)</span>
+<span class="c1"># min_speed = -1 * np.max(abs_diff)</span>
+<span class="c1"># max_speed = np.max(abs_diff)</span>
+<span class="c1"># plot_plane(</span>
+<span class="c1">#     diff,</span>
+<span class="c1">#     ax=ax[1],</span>
+<span class="c1">#     min_speed=min_speed,</span>
+<span class="c1">#     max_speed=max_speed,</span>
+<span class="c1">#     cmap=&#39;PuOr&#39;,</span>
+<span class="c1">#     clevels=100,</span>
+<span class="c1">#     color_bar=True,</span>
+<span class="c1">#     title=&quot;FLORIS - foxes&quot;</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.tri._tricontour.TriContourSet at 0x7f1c680c5460&gt;
+</pre></div>
+</div>
+<img alt="_images/2577ebcdc66158f2da447d48465fc2e28d22f502cc535660325b553ff11041e2.png" src="_images/2577ebcdc66158f2da447d48465fc2e28d22f502cc535660325b553ff11041e2.png" />
+<img alt="_images/c78dfc490848ec294fb69897df6091775734acde965d919810774ea817faee6d.png" src="_images/c78dfc490848ec294fb69897df6091775734acde965d919810774ea817faee6d.png" />
+<img alt="_images/f8b8cb00df8d7648bba1c2dae5b62176e3a3b855f6081675a9d81e77615723db.png" src="_images/f8b8cb00df8d7648bba1c2dae5b62176e3a3b855f6081675a9d81e77615723db.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Bastankhah / Porte Agel 2016<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Experimental and theoretical study of wind turbine wakes in yawed conditions
+<a class="reference external" href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/experimental-and-theoretical-study-of-wind-turbine-wakes-in-yawed-conditions/400859134E38F340C8811FD7AAD0CE05">https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/experimental-and-theoretical-study-of-wind-turbine-wakes-in-yawed-conditions/400859134E38F340C8811FD7AAD0CE05</a></p>
+<p>ky, kz are wake growth rates in the y and z directions
+Eq 6.16 has parameters alpha and beta and below says that they are 0.58 and 0.077.
+Equations 7.1 - 7.4 summarize the model but use parameters alpha_star and beta_star, which are 2.32 and 0.154.
+These are related to alpha and beta by:</p>
+<ul class="simple">
+<li><p>alpha_star = 4 * alpha = 4 * 0.58 = 2.32</p></li>
+<li><p>beta_star = 2 * beta = 2 * 0.077 = 0.154</p></li>
+</ul>
+<p>In the near wake, the distribution away from the wake centerline is given by 6.13.</p>
+<p>Implemented in: FLORIS, foxes
+PyWake implements the velocity model, but not the deflection model.</p>
+<p>NOTE: k is set to 0.022 as mentioned in the last paragraph of section 4.</p>
+<p>NOTE: FLORIS has ky and kz parameters, but foxes uses the same, k, for both.
+This simplification is mentioned in the paper in section 7 Model Predictions.
+For simplicity, FLORIS uses k for both ky and kz.</p>
+<p>NOTE: FLORIS sets ky and kz in the deflection model based on Eq 15 from Niayifar / Porte Agel 2016 <a class="reference external" href="https://www.mdpi.com/1996-1073/9/9/741">https://www.mdpi.com/1996-1073/9/9/741</a>
+ky = kz = ka * I + kb
+ka = 0.3837
+kb = 0.003678
+Where as Bastankhah / Porte Agel 2016 sets ky and kz directly as in the velocity model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">this_case</span> <span class="o">=</span> <span class="n">CASE_DIR</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;bastankhah2016_deflection/wind_energy_system.yaml&#39;</span><span class="p">)</span>
+<span class="n">floris_1turbine</span> <span class="o">=</span> <span class="n">WCompFloris</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="n">foxes_1turbine</span> <span class="o">=</span> <span class="n">WCompFoxes</span><span class="p">(</span><span class="n">this_case</span><span class="p">)</span>
+<span class="c1"># pywake_1turbine = WCompPyWake(this_case)</span>
+
+<span class="n">ROTOR_D</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">rotor_diameter</span>
+
+<span class="n">XMIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">XMAX</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ROTOR_D</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">floris_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="n">foxes_1turbine</span><span class="o">.</span><span class="n">streamwise_profile_plot</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">y_coordinate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="n">XMIN</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">XMAX</span><span class="p">)</span>
+<span class="c1"># pywake_1turbine.streamwise_profile_plot(wind_direction=270, y_coordinate=0.0, xmin=XMIN, xmax=XMAX)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Streamwise velocity profile&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;U (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ybound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+<span class="c1"># YMIN = -2 * ROTOR_D</span>
+<span class="c1"># YMAX =  2 * ROTOR_D</span>
+
+<span class="c1"># fig, ax = plt.subplots(3, 1)</span>
+<span class="c1"># fig.suptitle(&quot;Cross section velocity profile&quot;)</span>
+
+<span class="c1"># X_D = [1, 5, 10]</span>
+<span class="c1"># for i, D_X in enumerate(X_D):</span>
+<span class="c1">#     plt.axes(ax[i])</span>
+<span class="c1">#     floris_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     foxes_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     # pywake_1turbine.xsection_profile_plot(wind_direction=270, x_coordinate=D_X * ROTOR_D, ymin=YMIN, ymax=YMAX)</span>
+<span class="c1">#     ax[i].set_title(f&quot;{D_X} D&quot;)</span>
+<span class="c1">#     ax[i].set_ylabel(&quot;U (m/s)&quot;)</span>
+<span class="c1">#     ax[i].set_ybound(lower=0.0, upper=12.0)</span>
+<span class="c1">#     ax[i].grid()</span>
+<span class="c1">#     if i &lt; len(X_D) - 1:</span>
+<span class="c1">#         ax[i].xaxis.set_ticklabels([])</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ax[i].set_xlabel(&quot;Y (m)&quot;)</span>
+<span class="c1">#         ax[i].legend()</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Horizontal streamwise velocity contour&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># ax[0].xaxis.set_ticklabels([])</span>
+<span class="c1"># pywake_plane = pywake_1turbine.horizontal_contour(wind_direction=270)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="n">floris_plane</span> <span class="o">=</span> <span class="n">floris_1turbine</span><span class="o">.</span><span class="n">horizontal_contour</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="n">foxes_plane</span> <span class="o">=</span> <span class="n">foxes_1turbine</span><span class="o">.</span><span class="n">horizontal_contour</span><span class="p">(</span><span class="n">wind_direction</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Diff: FLORIS as basis&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># diff = floris_plane - pywake_plane</span>
+<span class="c1"># abs_diff = np.abs(diff.values)</span>
+<span class="c1"># min_speed = -1 * np.max(abs_diff)</span>
+<span class="c1"># max_speed = np.max(abs_diff)</span>
+<span class="c1"># plot_plane(</span>
+<span class="c1">#     diff,</span>
+<span class="c1">#     ax=ax[0],</span>
+<span class="c1">#     min_speed=min_speed,</span>
+<span class="c1">#     max_speed=max_speed,</span>
+<span class="c1">#     cmap=&#39;PuOr&#39;,</span>
+<span class="c1">#     clevels=100,</span>
+<span class="c1">#     color_bar=True,</span>
+<span class="c1">#     title=&quot;FLORIS - PyWake&quot;</span>
+<span class="c1"># )</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">floris_plane</span> <span class="o">-</span> <span class="n">foxes_plane</span>
+<span class="n">abs_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">diff</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">min_speed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abs_diff</span><span class="p">)</span>
+<span class="n">max_speed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abs_diff</span><span class="p">)</span>
+<span class="n">plot_plane</span><span class="p">(</span>
+    <span class="n">diff</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">min_speed</span><span class="o">=</span><span class="n">min_speed</span><span class="p">,</span>
+    <span class="n">max_speed</span><span class="o">=</span><span class="n">max_speed</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuOr&#39;</span><span class="p">,</span>
+    <span class="n">clevels</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">color_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;FLORIS - foxes&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Turbine 0, T0: windio_turbine
+Turbine 1, T1: windio_turbine
+Turbine 2, T2: windio_turbine
+Turbine 3, T3: windio_turbine
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.tri._tricontour.TriContourSet at 0x7f1c67deba40&gt;
+</pre></div>
+</div>
+<img alt="_images/b9f582b31e1a1f354fc605ece01447e511e2ad3c228ee37df50d16132f520429.png" src="_images/b9f582b31e1a1f354fc605ece01447e511e2ad3c228ee37df50d16132f520429.png" />
+<img alt="_images/50fc4cbe9d1ceaf2450b2c6b863e12d7d6df319f5774826a5249c97dc53f389c.png" src="_images/50fc4cbe9d1ceaf2450b2c6b863e12d7d6df319f5774826a5249c97dc53f389c.png" />
+<img alt="_images/ddd792ec0b9a317234e3932a38f571687da57fcaf6e4c09e377c11500a375578.png" src="_images/ddd792ec0b9a317234e3932a38f571687da57fcaf6e4c09e377c11500a375578.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="torque2024_1turbine.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Torque 2024 - 1 turbine cases</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="architecture.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Architecture and Design</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-models">Velocity models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jensen">Jensen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bastankhah-porte-agel-2014">Bastankhah / Porte Agel 2014</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bastankhah-porte-agel-2016">Bastankhah / Porte Agel 2016</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#turbopark">TurbOPark</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-deflection-models">Wake deflection models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jimenez">Jimenez</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Bastankhah / Porte Agel 2016</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rafael Mudafort
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

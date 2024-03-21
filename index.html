@@ -75,7 +75,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Architecture and Design" href="architecture.html" />
+    <link rel="next" title="WESC 2023 - Simple Demo" href="wesc2023_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="python"/>
   </head>
@@ -187,6 +187,9 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="wesc2023_demo.html">WESC 2023 - Simple Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torque2024_1turbine.html">Torque 2024 - 1 turbine cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torque2024_4turbine.html">Torque 2024 - 4 turbine cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture and Design</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api_docs.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="_autosummary/wcomp.base_interface.html">wcomp.base_interface</a></li>
@@ -411,7 +414,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wakes Compared (wcomp)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 </ul>
 
             </nav>
@@ -448,7 +450,7 @@ in the comparison directly.</p>
 <p>The wake modeling software currently integrated to <code class="docutils literal notranslate"><span class="pre">wcomp</span></code> are:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/NREL/floris">Floris</a></p></li>
-<li><p><a class="reference external" href="https://github.com/FraunhoferIWES/foxes">FOXES</a></p></li>
+<li><p><a class="reference external" href="https://github.com/FraunhoferIWES/foxes">foxes</a></p></li>
 <li><p><a class="reference external" href="https://gitlab.windenergy.dtu.dk/TOPFARM/PyWake">PyWake</a></p></li>
 </ul>
 <p>The package diagram below shows the modules within <code class="docutils literal notranslate"><span class="pre">wcomp</span></code> and how each relates to the
@@ -475,9 +477,9 @@ others as dependencies (in other words, which modules import which other modules
 <p>Currently, <code class="docutils literal notranslate"><span class="pre">wcomp</span></code> must be installed manually with <code class="docutils literal notranslate"><span class="pre">pip</span></code>. The dependencies are:</p>
 <ul class="simple">
 <li><p>windIO v1.0, can be installed directly from PyPI</p></li>
-<li><p>FLORIS v3.5, can be installed directly from PyPI but preferably locally from <a class="github reference external" href="https://github.com/nrel/floris">nrel/floris</a></p></li>
-<li><p>FOXES v0.5.1 plus two additional commits, must be installed from <a class="github reference external" href="https://github.com/rafmudaf/foxes">rafmudaf/foxes</a> at main branch</p></li>
-<li><p>PyWake v2.5.0 plus two additional commits, must be installed from <a class="github reference external" href="https://github.com/rafmudaf/PyWake">rafmudaf/PyWake</a> at master branch</p></li>
+<li><p>FLORIS v3.6 (current develop branch), not yet released so must be installed from locally from <a class="github reference external" href="https://github.com/nrel/floris">nrel/floris</a></p></li>
+<li><p>foxes v0.6.2, can be installed directly from PyPI</p></li>
+<li><p>PyWake v2.5.0 plus three additional commits, must be installed from <a class="github reference external" href="https://github.com/rafmudaf/PyWake">rafmudaf/PyWake</a> at master branch</p></li>
 </ul>
 <p>Follow these steps to install the dependencies and <code class="docutils literal notranslate"><span class="pre">wcomp</span></code>:</p>
 <ol class="arabic simple">
@@ -485,21 +487,17 @@ others as dependencies (in other words, which modules import which other modules
 <li><p>Install the dependencies:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>windIO
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nrel/floris<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>floris/
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rafmudaf/foxes<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>foxes/
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">foxes</span><span class="o">==</span><span class="m">0</span>.6.2
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nrel/floris<span class="w"> </span>-b<span class="w"> </span>develop<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>floris/
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rafmudaf/PyWake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>PyWake/
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">wcomp</span></code>:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>wcomp
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>wcomp
 </pre></div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
-<p>Here's how to get started</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -535,11 +533,11 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rafmu
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="architecture.html"
+       href="wesc2023_demo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Architecture and Design</p>
+        <p class="prev-next-title">WESC 2023 - Simple Demo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -561,7 +559,6 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/rafmu
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wakes Compared (wcomp)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 </ul>
 
   </nav></div>

@@ -184,6 +184,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../wesc2023_demo.html">WESC 2023 - Simple Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torque2024_1turbine.html">Torque 2024 - 1 turbine cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torque2024_4turbine.html">Torque 2024 - 4 turbine cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture and Design</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../api_docs.html">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">wcomp.base_interface</a></li>
@@ -409,6 +412,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase"><code class="docutils literal notranslate"><span class="pre">WCompBase</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.LINE_PLOT_COLOR"><code class="docutils literal notranslate"><span class="pre">WCompBase.LINE_PLOT_COLOR</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.LEGEND"><code class="docutils literal notranslate"><span class="pre">WCompBase.LEGEND</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.N_POINTS_1D"><code class="docutils literal notranslate"><span class="pre">WCompBase.N_POINTS_1D</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.RESOLUTION_2D"><code class="docutils literal notranslate"><span class="pre">WCompBase.RESOLUTION_2D</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.rotor_diameter"><code class="docutils literal notranslate"><span class="pre">WCompBase.rotor_diameter</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.hub_height"><code class="docutils literal notranslate"><span class="pre">WCompBase.hub_height</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.AEP"><code class="docutils literal notranslate"><span class="pre">WCompBase.AEP()</span></code></a></li>
@@ -461,6 +466,16 @@ for implementation details.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="wcomp.base_interface.WCompBase.LEGEND">
 <span class="sig-name descname"><span class="pre">LEGEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'OVERWRITE'</span></em><a class="headerlink" href="#wcomp.base_interface.WCompBase.LEGEND" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wcomp.base_interface.WCompBase.N_POINTS_1D">
+<span class="sig-name descname"><span class="pre">N_POINTS_1D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#wcomp.base_interface.WCompBase.N_POINTS_1D" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wcomp.base_interface.WCompBase.RESOLUTION_2D">
+<span class="sig-name descname"><span class="pre">RESOLUTION_2D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#wcomp.base_interface.WCompBase.RESOLUTION_2D" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -678,7 +693,7 @@ function should be used to produce the plot. A sample implementation is shown be
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wcomp.base_interface.WCompBase.horizontal_contour">
-<span class="sig-name descname"><span class="pre">horizontal_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wind_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><span class="pre">WakePlane</span></a></span></span><a class="reference internal" href="../_modules/wcomp/base_interface.html#WCompBase.horizontal_contour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wcomp.base_interface.WCompBase.horizontal_contour" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">horizontal_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wind_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><span class="pre">WakePlane</span></a></span></span><a class="reference internal" href="../_modules/wcomp/base_interface.html#WCompBase.horizontal_contour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wcomp.base_interface.WCompBase.horizontal_contour" title="Link to this definition">#</a></dt>
 <dd><p>This function produces a contour plot of the velocity in the x-y plane where
 x is streamwise and y is lateral. The contour is located at the hub height.
 The extent of the sample plane should be:</p>
@@ -693,10 +708,7 @@ class should be used to store the data. Then, the {py:meth}`wcomp.plotting.plot_
 function should be used to produce the plot. A sample implementation is shown below.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>wind_direction</strong> (<em>float</em>) -- Incoming wind direction in degrees with West at 270 degrees.</p></li>
-<li><p><strong>resolution</strong> (<em>tuple</em>) -- Number of points in the (x, y) directions for the contour plot grid</p></li>
-</ul>
+<dd class="field-odd"><p><strong>wind_direction</strong> (<em>float</em>) -- Incoming wind direction in degrees with West at 270 degrees.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>NotImplementedError</strong> -- This function must be implemented in a subclass</p>
@@ -719,7 +731,6 @@ function should be used to produce the plot. A sample implementation is shown be
     <span class="n">y</span><span class="p">,</span>      <span class="c1"># ^ ^ ^</span>
     <span class="n">u</span><span class="p">,</span>
     <span class="s2">&quot;z&quot;</span><span class="p">,</span>
-    <span class="n">resolution</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Plot the plane</span>
@@ -740,7 +751,7 @@ function should be used to produce the plot. A sample implementation is shown be
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wcomp.base_interface.WCompBase.xsection_contour">
-<span class="sig-name descname"><span class="pre">xsection_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wind_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_coordinate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><span class="pre">WakePlane</span></a></span></span><a class="reference internal" href="../_modules/wcomp/base_interface.html#WCompBase.xsection_contour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wcomp.base_interface.WCompBase.xsection_contour" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">xsection_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wind_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_coordinate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><span class="pre">WakePlane</span></a></span></span><a class="reference internal" href="../_modules/wcomp/base_interface.html#WCompBase.xsection_contour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wcomp.base_interface.WCompBase.xsection_contour" title="Link to this definition">#</a></dt>
 <dd><p>This function produces a contour plot of the velocity in the y-z plane where
 y is lateral and z is vertical. The contour is located in the streamwise direction at the
 given <cite>x_coordinate</cite>. The extent of the sample plane should be:</p>
@@ -758,8 +769,6 @@ function should be used to produce the plot. A sample implementation is shown be
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>wind_direction</strong> (<em>float</em>) -- Wind direction to align the plot in the visualization in
 degrees with West being 270 degrees and North being 0 degrees</p></li>
-<li><p><strong>resolution</strong> (<em>tuple</em>) -- Grid resolution for the contour plot;
-element 0 is the resolution in y and element 1 is the resolution in z</p></li>
 <li><p><strong>x_coordinate</strong> (<em>float</em>) -- The streamwise location for the extracted plane</p></li>
 </ul>
 </dd>
@@ -784,7 +793,6 @@ element 0 is the resolution in y and element 1 is the resolution in z</p></li>
     <span class="n">z</span><span class="p">,</span>      <span class="c1"># ^ ^ ^</span>
     <span class="n">u</span><span class="p">,</span>
     <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-    <span class="n">resolution</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Plot the plane</span>
@@ -874,6 +882,8 @@ element 0 is the resolution in y and element 1 is the resolution in z</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase"><code class="docutils literal notranslate"><span class="pre">WCompBase</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.LINE_PLOT_COLOR"><code class="docutils literal notranslate"><span class="pre">WCompBase.LINE_PLOT_COLOR</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.LEGEND"><code class="docutils literal notranslate"><span class="pre">WCompBase.LEGEND</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.N_POINTS_1D"><code class="docutils literal notranslate"><span class="pre">WCompBase.N_POINTS_1D</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.RESOLUTION_2D"><code class="docutils literal notranslate"><span class="pre">WCompBase.RESOLUTION_2D</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.rotor_diameter"><code class="docutils literal notranslate"><span class="pre">WCompBase.rotor_diameter</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.hub_height"><code class="docutils literal notranslate"><span class="pre">WCompBase.hub_height</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wcomp.base_interface.WCompBase.AEP"><code class="docutils literal notranslate"><span class="pre">WCompBase.AEP()</span></code></a></li>
