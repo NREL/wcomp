@@ -1,0 +1,13 @@
+name: 270 degree wind direction, 9.8 m/s wind speed, 7.5% TI
+wind_resource:
+    wind_direction: [270.0]
+    wind_speed: [9.8]
+    probability: 
+        data: [1.0]
+        dims: [wind_direction]
+    turbulence_intensity: 
+        data: 0.075
+        dims: []
+    air_density:
+        data: 1.225
+        dims: []

@@ -1,0 +1,23 @@
+name: IEA 15MW turbine
+site: !include energy_site.yaml
+wind_farm: !include wind_farm.yaml
+attributes:
+  analyses:
+    yaw_angles:
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    wake_model:
+      velocity:
+        name: bastankhah2016
+        parameters:
+          alpha: 0.58
+          beta: 0.077
+          k: 0.022
+      deflection:
+        name: bastankhah2016_deflection
+        parameters:
+          alpha: 0.58
+          beta: 0.077
+          k: 0.022

@@ -6,5 +6,6 @@ root: index
 chapters:
 - file: wesc2023_demo
 - file: torque2024_1turbine
+- file: torque2024_4turbine
 - file: architecture
 - file: api_docs
