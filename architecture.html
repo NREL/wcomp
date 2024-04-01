@@ -450,14 +450,17 @@ WCompBase Class Diagram</div>
   class WCompBase {
     LEGEND : str
     LINE_PLOT_COLOR : str
+    LINE_PLOT_LINESTYLE : str
+    LINE_PLOT_LINEWIDTH : int
+    LINE_PLOT_MARKER : str
     N_POINTS_1D : int
     RESOLUTION_2D : int
     hub_height
     rotor_diameter
     AEP()* float
     horizontal_contour(wind_direction: float)* WakePlane
-    streamwise_profile_plot(wind_direction: float, y_coordinate: float, xmin: float, xmax: float)* None
-    vertical_profile_plot(wind_direction: float, x_coordinate: float, y_coordinate: float, zmax: float)* None
+    streamwise_profile_plot(wind_direction: float, y_coordinate: float, xmin: float, xmax: float)* WakeProfile
+    vertical_profile_plot(wind_direction: float, x_coordinate: float, y_coordinate: float, zmax: float)* WakeProfile
     xsection_contour(wind_direction: float, x_coordinate: float)* WakePlane
     xsection_profile_plot(wind_direction: float, x_coordinate: float, ymin: float, ymax: float)* WakeProfile
   }

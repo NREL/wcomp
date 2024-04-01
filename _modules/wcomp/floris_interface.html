@@ -388,8 +388,8 @@ document.write(`
         <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
             <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;ka&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kb&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ka&quot;</span><span class="p">:</span> <span class="s2">&quot;ka&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;kb&quot;</span><span class="p">:</span> <span class="s2">&quot;kb&quot;</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">},</span>
     <span class="s2">&quot;turbopark&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -411,8 +411,8 @@ document.write(`
         <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
             <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;ka&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kb&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ka&quot;</span><span class="p">:</span> <span class="s2">&quot;ka&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;kb&quot;</span><span class="p">:</span> <span class="s2">&quot;kb&quot;</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">},</span>
 <span class="p">}</span>
@@ -485,6 +485,7 @@ document.write(`
     <span class="n">LINE_PLOT_COLOR</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
     <span class="n">LINE_PLOT_MARKER</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">LINE_PLOT_LINESTYLE</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span>
+    <span class="n">LINE_PLOT_LINEWIDTH</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">LEGEND</span> <span class="o">=</span> <span class="s2">&quot;Floris&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">):</span>
@@ -615,7 +616,7 @@ document.write(`
         <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">zmax</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="p">):</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakeProfile</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 
         <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_y_plane</span><span class="p">(</span>
@@ -639,8 +640,10 @@ document.write(`
             <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_COLOR</span><span class="p">,</span>
             <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_MARKER</span><span class="p">,</span>
             <span class="n">linestyle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINESTYLE</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINEWIDTH</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LEGEND</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">profile</span></div>
 
 
 <div class="viewcode-block" id="WCompFloris.streamwise_profile_plot">
@@ -651,7 +654,7 @@ document.write(`
         <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">xmin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">xmax</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="p">):</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakeProfile</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 
         <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_y_plane</span><span class="p">(</span>
@@ -675,8 +678,10 @@ document.write(`
             <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_COLOR</span><span class="p">,</span>
             <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_MARKER</span><span class="p">,</span>
             <span class="n">linestyle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINESTYLE</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINEWIDTH</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LEGEND</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">profile</span></div>
 
 
 <div class="viewcode-block" id="WCompFloris.xsection_profile_plot">
@@ -687,7 +692,7 @@ document.write(`
         <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">ymin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">ymax</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="p">):</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakeProfile</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 
         <span class="n">cut_plane</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fi</span><span class="o">.</span><span class="n">calculate_horizontal_plane</span><span class="p">(</span>
@@ -711,8 +716,10 @@ document.write(`
             <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_COLOR</span><span class="p">,</span>
             <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_MARKER</span><span class="p">,</span>
             <span class="n">linestyle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINESTYLE</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LINE_PLOT_LINEWIDTH</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">LEGEND</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">profile</span></div>
 
 
     <span class="c1"># 2D contour plots</span>

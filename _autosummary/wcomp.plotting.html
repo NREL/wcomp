@@ -427,7 +427,7 @@ document.write(`
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#wcomp.plotting.plot_plane" title="wcomp.plotting.plot_plane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_plane</span></code></a>(wake_plane[, ax, min_speed, ...])</p></td>
-<td><p>Generate pseudocolor mesh plot of the cut_plane.</p></td>
+<td><p>Plot the data in a WakePlane object on a 2D contour plot.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#wcomp.plotting.plot_profile" title="wcomp.plotting.plot_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_profile</span></code></a>(wake_profile[, ax, title])</p></td>
 <td><p></p></td>
@@ -446,39 +446,39 @@ document.write(`
 
 <dl class="py function">
 <dt class="sig sig-object py" id="wcomp.plotting.plot_plane">
-<span class="sig-prename descclassname"><span class="pre">wcomp.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wake_plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><span class="pre">WakePlane</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'coolwarm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clevels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wcomp/plotting.html#plot_plane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wcomp.plotting.plot_plane" title="Link to this definition">#</a></dt>
-<dd><p>Generate pseudocolor mesh plot of the cut_plane.</p>
+<span class="sig-prename descclassname"><span class="pre">wcomp.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wake_plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><span class="pre">WakePlane</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axes</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'coolwarm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clevels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_bar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/wcomp/plotting.html#plot_plane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wcomp.plotting.plot_plane" title="Link to this definition">#</a></dt>
+<dd><p>Plot the data in a WakePlane object on a 2D contour plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cut_plane</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CutPlane</span></code>) -- 2D
-plane through wind plant.</p></li>
-<li><p><strong>ax</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.pyplot.axes</span></code>, optional) -- Figure axes. Defaults
-to None.</p></li>
-<li><p><strong>vel_component</strong> (<em>str</em><em>, </em><em>optional</em>) -- The velocity component that the cut plane is
-perpendicular to.</p></li>
-<li><p><strong>min_speed</strong> (<em>float</em><em>, </em><em>optional</em>) -- Minimum value of wind speed for
-contours. Defaults to None.</p></li>
-<li><p><strong>max_speed</strong> (<em>float</em><em>, </em><em>optional</em>) -- Maximum value of wind speed for
-contours. Defaults to None.</p></li>
-<li><p><strong>cmap</strong> (<em>str</em><em>, </em><em>optional</em>) -- Colormap specifier. Defaults to
-'coolwarm'.</p></li>
-<li><p><strong>levels</strong> (<em>np.array</em><em>, </em><em>optional</em>) -- Contour levels for line contour plot.
+<li><p><strong>wake_plane</strong> (<a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><em>WakePlane</em></a>) -- Data structure containing the sample data on a plane.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em><em>, </em><em>optional</em>) -- matplotlib Axes to place the plot. Defaults to None.
+If None, a new figure and axes are created.</p></li>
+<li><p><strong>min_speed</strong> (<em>float</em><em>, </em><em>optional</em>) -- Minimum value of wind speed for the contour plot color range.
+Defaults to None. If None, the minimum value in the data is used.</p></li>
+<li><p><strong>max_speed</strong> (<em>float</em><em>, </em><em>optional</em>) -- Maximum value of wind speed for the contour plot color range.
+Defaults to None. If None, the maximum value in the data is used.</p></li>
+<li><p><strong>cmap</strong> (<em>str</em><em>, </em><em>optional</em>) -- Colormap name from
+<a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">https://matplotlib.org/stable/users/explain/colors/colormaps.html</a>.
+Defaults to &quot;coolwarm&quot;.</p></li>
+<li><p><strong>clevels</strong> (<em>int</em><em> or </em><em>array-like</em><em>, </em><em>optional</em>) -- From the matplotlib documentation:
+Determines the number and positions of the contour lines / regions.
+If an int n, use MaxNLocator, which tries to automatically choose no more than n+1
+&quot;nice&quot; contour levels between between minimum and maximum numeric values of Z.
+If array-like, draw contour lines at the specified levels.
+The values must be in increasing order.
+Reference: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tricontourf.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tricontourf.html</a>.
 Defaults to None.</p></li>
-<li><p><strong>clevels</strong> (<em>np.array</em><em>, </em><em>optional</em>) -- Contour levels for tricontourf plot.
-Defaults to None.</p></li>
-<li><p><strong>color_bar</strong> (<em>Boolean</em><em>, </em><em>optional</em>) -- Flag to include a color bar on the plot.
+<li><p><strong>color_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) -- Flag to enable displaying a color bar for this Axes.
 Defaults to False.</p></li>
-<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) -- User-supplied title for the plot. Defaults to &quot;&quot;.</p></li>
-<li><p><strong>**kwargs</strong> -- Additional parameters to pass to line contour plot.</p></li>
-<li><p><strong>wake_plane</strong> (<a class="reference internal" href="wcomp.output_struct.html#wcomp.output_struct.WakePlane" title="wcomp.output_struct.WakePlane"><em>WakePlane</em></a>) -- </p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) -- Title for this Axes. Defaults to None.</p></li>
+<li><p><strong>kwargs</strong> -- Additional parameters passed to pyplot.tricontourf.
+See <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tricontourf.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tricontourf.html</a>
+for available parameters.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Image handle.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>im (<code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.plt.pcolormesh</span></code>)</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

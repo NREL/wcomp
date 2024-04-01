@@ -368,7 +368,12 @@ document.write(`
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">LINE_PLOT_COLOR</span> <span class="o">=</span> <span class="s2">&quot;OVERWRITE&quot;</span>   <span class="c1"># Color to use for all line plots; use matplotlib color codes</span>
+    <span class="n">LINE_PLOT_MARKER</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>           <span class="c1"># Marker to use for all line plots; use matplotlib marker codes</span>
+    <span class="n">LINE_PLOT_LINESTYLE</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span>      <span class="c1"># Line style to use for all line plots; use matplotlib line style codes</span>
+    <span class="n">LINE_PLOT_LINEWIDTH</span> <span class="o">=</span> <span class="mi">2</span>         <span class="c1"># Line width to use for all line plots</span>
     <span class="n">LEGEND</span> <span class="o">=</span> <span class="s2">&quot;OVERWRITE&quot;</span>            <span class="c1"># Legend entry; typically should be the name of the corresponding software</span>
+
+    <span class="c1"># These generally do not need to be changed in the subclass</span>
     <span class="n">N_POINTS_1D</span> <span class="o">=</span> <span class="mi">100</span>               <span class="c1"># Number of points to use for 1D line plots</span>
     <span class="n">RESOLUTION_2D</span> <span class="o">=</span> <span class="mi">10</span>              <span class="c1"># Resolution for 2D contour plots in meters</span>
 
@@ -449,7 +454,7 @@ document.write(`
         <span class="n">x_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">zmax</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakeProfile</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This function produces a 1D plot of the velocity profile in the z-x plane</span>
 <span class="sd">        where z is normal to the ground and x is streamwise. A sample line is produced</span>
@@ -494,6 +499,8 @@ document.write(`
 <span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
 <span class="sd">                    label=self.LEGEND</span>
 <span class="sd">                )</span>
+
+<span class="sd">                return profile</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.vertical_profile_plot&quot;</span><span class="p">)</span></div>
 
@@ -506,7 +513,7 @@ document.write(`
         <span class="n">y_coordinate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">xmin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
         <span class="n">xmax</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WakeProfile</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This function produces a 1D plot of the velocity profile in the z-x plane</span>
 <span class="sd">        where z is normal to the ground and x is streamwise. A sample line is produced</span>
@@ -549,6 +556,8 @@ document.write(`
 <span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
 <span class="sd">                    label=self.LEGEND</span>
 <span class="sd">                )</span>
+
+<span class="sd">                return profile</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.streamwise_profile_plot&quot;</span><span class="p">)</span></div>
 
@@ -605,6 +614,8 @@ document.write(`
 <span class="sd">                    linestyle=self.LINE_PLOT_LINESTYLE,</span>
 <span class="sd">                    label=self.LEGEND</span>
 <span class="sd">                )</span>
+
+<span class="sd">                return profile</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;WCompBase.xsection_profile_plot&quot;</span><span class="p">)</span></div>
 
