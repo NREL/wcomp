@@ -13,10 +13,21 @@ others as dependencies (which modules import which other modules).
 
 ```{mermaid}
 classDiagram
-  wcomp --> floris_interface
-  wcomp --> foxes_interface
-  wcomp --> pywake_interface
-  base_interface --> output_struct
+  class FLORIS
+  class FOXES
+  class PyWake
+  namespace wcomp {
+      class base_interface
+      class floris_interface
+      class foxes_interface
+      class pywake_interface
+      class plotting
+      class output_struct
+  }
+
+  FLORIS --> floris_interface
+  FOXES --> foxes_interface
+  PyWake --> pywake_interface
   floris_interface --> base_interface
   floris_interface --> output_struct
   floris_interface --> plotting
@@ -45,8 +56,8 @@ API documentation for their respective interface files, for reference.
 
 | Wake Model | Interface File |
 |------------|----------------|
-| [Floris](https://github.com/NREL/floris) | {py:class}`wcomp.floris_interface` |
-| [foxes](https://github.com/FraunhoferIWES/foxes) | {py:class}`wcomp.foxes_interface` |
+| [FLORIS](https://github.com/NREL/floris) | {py:class}`wcomp.floris_interface` |
+| [FOXES](https://github.com/FraunhoferIWES/foxes) | {py:class}`wcomp.foxes_interface` |
 | [PyWake](https://gitlab.windenergy.dtu.dk/TOPFARM/PyWake) | {py:class}`wcomp.pywake_interface` |
 
 <!-- ```{autoclasstree} wcomp.base_interface

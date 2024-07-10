@@ -20,38 +20,30 @@ wind farm wake model simulation and a set of plotting functions to inspect these
 Any wind farm wake modeling software that implements the `wcomp` interface can be included
 in the comparison directly.
 
-The wake modeling software currently integrated to `wcomp` are:
-- [Floris](https://github.com/NREL/floris)
-- [foxes](https://github.com/FraunhoferIWES/foxes)
-- [PyWake](https://gitlab.windenergy.dtu.dk/TOPFARM/PyWake)
+## Integrated software
 
-The package diagram below shows the modules within `wcomp` and how each relates to the
-others as dependencies (in other words, which modules import which other modules).
+::::{grid}
+:gutter: 3
 
-```{mermaid}
-classDiagram
-  wcomp --> floris_interface
-  wcomp --> foxes_interface
-  wcomp --> pywake_interface
-  base_interface --> output_struct
-  floris_interface --> base_interface
-  floris_interface --> output_struct
-  floris_interface --> plotting
-  foxes_interface --> base_interface
-  foxes_interface --> output_struct
-  foxes_interface --> plotting
-  plotting --> output_struct
-  pywake_interface --> base_interface
-  pywake_interface --> output_struct
-  pywake_interface --> plotting
-```
+:::{grid-item-card} [FLORIS](https://github.com/NREL/floris)
+![floris](_static/logo_floris.png)
+:::
 
-# Installation
+:::{grid-item-card} [FOXES](https://github.com/FraunhoferIWES/foxes)
+![foxes](_static/logo_foxes.svg)
+:::
+
+:::{grid-item-card} [PyWake](https://gitlab.windenergy.dtu.dk/TOPFARM/PyWake)
+![pywake](_static/logo_pywake.svg)
+:::
+::::
+
+## Installation
 
 Currently, `wcomp` must be installed manually with `pip`. The dependencies are:
 
 - windIO v1.0, can be installed directly from PyPI
-- FLORIS v3.6 (current develop branch), not yet released so must be installed from locally from https://github.com/nrel/floris
+- FLORIS v3.6, can be installed directly from PyPI
 - foxes v0.6.2, can be installed directly from PyPI
 - PyWake v2.5.0 plus three additional commits, must be installed from https://github.com/rafmudaf/PyWake at master branch
 
@@ -71,3 +63,7 @@ git clone https://github.com/rafmudaf/PyWake && pip install -e PyWake/
 ```bash
 pip install -e wcomp
 ```
+
+## Getting started
+
+See {ref}`wesc2023`, {ref}`torque1turbine`, and {ref}`torque4turbine`.
